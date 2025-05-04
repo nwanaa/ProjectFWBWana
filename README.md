@@ -49,8 +49,8 @@
 | email       | varchar   | Unik, digunakan untuk login            |
 | password    | varchar   | Password terenkripsi                   |
 | role        | varchar   | 'mahasiswa' / 'pengurus' / 'admin'     |
-| created_at  | timestamp |                                        |
-| updated_at  | timestamp |                                        |
+| created_at      | TIMESTAMP | Waktu dibuat                                   |
+| updated_at      | TIMESTAMP | Waktu diubah                                   |
 
 ### Tabel `ukm`
 
@@ -60,8 +60,8 @@
 | nama_ukm     | varchar   | Nama UKM                                   |
 | deskripsi    | text      | Penjelasan tentang UKM                     |
 | pengurus_id  | int       | Foreign Key ke `user.id` (pengurus)        |
-| created_at   | timestamp |                                            |
-| updated_at   | timestamp |                                            |
+| created_at      | TIMESTAMP | Waktu dibuat                                   |
+| updated_at      | TIMESTAMP | Waktu diubah                                   |
 
 ### Tabel `anggota_ukm`
 
@@ -71,8 +71,8 @@
 | user_id   | int       | Foreign Key ke `user.id`                    |
 | ukm_id    | int       | Foreign Key ke `ukm.id`                     |
 | status    | varchar   | 'menunggu', 'diterima', dll.                 |
-| created_at| timestamp |                                              |
-| updated_at  | timestamp |                                        |
+| created_at      | TIMESTAMP | Waktu dibuat                                   |
+| updated_at      | TIMESTAMP | Waktu diubah                                   |
 
 ### Tabel `kegiatan`
 
@@ -84,20 +84,19 @@
 | deskripsi      | text      | Detail kegiatan                   |
 | tanggal        | date      | Tanggal pelaksanaan               |
 | lokasi         | varchar   | Lokasi kegiatan                   |
-| created_at     | timestamp |                                   |
-| updated_at     | timestamp |                                   |
+| created_at      | TIMESTAMP | Waktu dibuat                                   |
+| updated_at      | TIMESTAMP | Waktu diubah                                   |
 
 ### Tabel `pendaftaran_kegiatan`
 
 | Kolom           | Tipe Data | Keterangan                                     |
 |-----------------|-----------|------------------------------------------------|
 | id              | int       | Primary Key, auto increment                    |
-| user_id         | int       | Foreign Key ke `user.id`                      |
+| user_id         | int       | Foreign Key ke `user.id`                       |
 | kegiatan_id     | int       | Foreign Key ke `kegiatan.id`                   |
 | status          | varchar   | 'terdaftar', 'hadir', 'tidak hadir'            |
-| created_at      | timestamp |                                                |
-| updated_at  | timestamp |                                        |
-
+| created_at      | TIMESTAMP | Waktu dibuat                                   |
+| updated_at      | TIMESTAMP | Waktu diubah                                   |
 ---
 
 ## Jenis relasi dan tabel yang berelasi
