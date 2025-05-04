@@ -1,14 +1,18 @@
-# 🎓 WEBSITE PENCATATAN DAN PENDAFTARAN UKM KAMPUS
+<h3 align="center">🎓 WEBSITE PENCATATAN DAN PENDAFTARAN UKM KAMPUS</h3>
+---
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/6ea20b1c-762f-4fc2-98b8-fb3785782673" alt=" " width="200"/>
+</p>
 
-<img src="https://github.com/user-attachments/assets/6ea20b1c-762f-4fc2-98b8-fb3785782673" width="100%" alt="Gambar Proyek UKM"/>
-
-> **NIRWANA**  
-> D0223330  
-> Framework Web Based – 2025
-
+<p align="center">
+  <strong>NIRWANA</strong><br/><br/>
+  <strong>D0223330</strong><br/><br/>
+  <strong>Framework Web Based</strong><br/><br/>
+  <strong>2025</strong>
+</p>
 ---
 
-## 📌 Role dan Fitur-Fiturnya
+## Role dan Fitur-Fiturnya
 
 ### 👤 Mahasiswa
 - Mendaftar akun *(register)*
@@ -31,9 +35,9 @@
 
 ---
 
-## 🗃️ Struktur Database
+## Tabel-tabel database beserta field dan tipe datanya
 
-### 📄 Tabel `users`
+### Tabel `user`
 
 | Kolom       | Tipe Data | Keterangan                            |
 |-------------|-----------|----------------------------------------|
@@ -45,34 +49,33 @@
 | created_at  | timestamp |                                        |
 | updated_at  | timestamp |                                        |
 
-### 📄 Tabel `ukms`
+### Tabel `ukm`
 
 | Kolom        | Tipe Data | Keterangan                                 |
 |--------------|-----------|--------------------------------------------|
 | id           | int       | Primary Key, auto increment                |
 | nama_ukm     | varchar   | Nama UKM                                   |
 | deskripsi    | text      | Penjelasan tentang UKM                     |
-| logo         | varchar   | Path gambar logo                           |
-| pengurus_id  | int       | Foreign Key ke `users.id` (pengurus)       |
+| pengurus_id  | int       | Foreign Key ke `user.id` (pengurus)        |
 | created_at   | timestamp |                                            |
 | updated_at   | timestamp |                                            |
 
-### 📄 Tabel `anggota_ukm`
+### Tabel `anggota_ukm`
 
 | Kolom     | Tipe Data | Keterangan                                   |
 |-----------|-----------|----------------------------------------------|
 | id        | int       | Primary Key, auto increment                  |
-| user_id   | int       | Foreign Key ke `users.id`                    |
-| ukm_id    | int       | Foreign Key ke `ukms.id`                     |
+| user_id   | int       | Foreign Key ke `user.id`                    |
+| ukm_id    | int       | Foreign Key ke `ukm.id`                     |
 | status    | varchar   | 'menunggu', 'diterima', dll.                 |
 | created_at| timestamp |                                              |
 
-### 📄 Tabel `kegiatan`
+### Tabel `kegiatan`
 
 | Kolom          | Tipe Data | Keterangan                        |
 |----------------|-----------|-----------------------------------|
 | id             | int       | Primary Key, auto increment       |
-| ukm_id         | int       | Foreign Key ke `ukms.id`          |
+| ukm_id         | int       | Foreign Key ke `ukm.id`          |
 | nama_kegiatan  | varchar   | Nama kegiatan                     |
 | deskripsi      | text      | Detail kegiatan                   |
 | tanggal        | date      | Tanggal pelaksanaan               |
@@ -80,43 +83,30 @@
 | created_at     | timestamp |                                   |
 | updated_at     | timestamp |                                   |
 
-### 📄 Tabel `pendaftaran_kegiatan`
+### Tabel `pendaftaran_kegiatan`
 
 | Kolom           | Tipe Data | Keterangan                                     |
 |-----------------|-----------|------------------------------------------------|
 | id              | int       | Primary Key, auto increment                    |
-| user_id         | int       | Foreign Key ke `users.id`                      |
+| user_id         | int       | Foreign Key ke `user.id`                      |
 | kegiatan_id     | int       | Foreign Key ke `kegiatan.id`                   |
 | status          | varchar   | 'terdaftar', 'hadir', 'tidak hadir'            |
 | created_at      | timestamp |                                                |
 
 ---
 
-## 🔁 Relasi Antar Tabel
+## Jenis relasi dan tabel yang berelasi
 
 - **`user → ukm`**  
   *One-to-Many*: Satu user (pengurus) bisa mengelola banyak UKM.
 
-- **`users → anggota_ukm ← ukms`**  
+- **`user → anggota_ukm ← ukm`**  
   *Many-to-Many*: Mahasiswa bisa gabung lebih dari satu UKM, satu UKM punya banyak anggota.
 
-- **`ukms → kegiatan`**  
+- **`ukm → kegiatan`**  
   *One-to-Many*: Satu UKM bisa punya banyak kegiatan.
 
-- **`users → pendaftaran_kegiatan ← kegiatan`**  
+- **`user → pendaftaran_kegiatan ← kegiatan`**  
   *Many-to-Many*: Mahasiswa bisa mendaftar banyak kegiatan, dan satu kegiatan bisa diikuti banyak mahasiswa.
 
----
-
-## 👨‍💻 Dibuat oleh
-
-> **Nirwana**  
-> D0223330  
-> Proyek Mata Kuliah: Framework Web Based (2025)
-
----
-
-## 📄 Lisensi
-
-This project is licensed under the MIT License.
 
