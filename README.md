@@ -38,7 +38,7 @@
 
 ---
 
-## Tabel-tabel database beserta field dan tipe datanya
+## Tabel-Tabel Database Beserta Field dan Tipe Datanya
 
 ### Tabel `user`
 
@@ -79,7 +79,7 @@
 | Kolom          | Tipe Data | Keterangan                        |
 |----------------|-----------|-----------------------------------|
 | id             | int       | Primary Key, auto increment       |
-| ukm_id         | int       | Foreign Key ke `ukm.id`          |
+| ukm_id         | int       | Foreign Key ke `ukm.id`           |
 | nama_kegiatan  | varchar   | Nama kegiatan                     |
 | deskripsi      | text      | Detail kegiatan                   |
 | tanggal        | date      | Tanggal pelaksanaan               |
@@ -99,7 +99,7 @@
 | updated_at      | TIMESTAMP | Waktu diubah                                   |
 ---
 
-## Jenis relasi dan tabel yang berelasi
+## Jenis Relasi dan Tabel yang Berelasi
 
 - **`user → ukm`**  
   *One-to-Many*: Satu user (pengurus) bisa mengelola banyak UKM.
