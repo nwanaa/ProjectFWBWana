@@ -30,7 +30,7 @@
 - Membuat kegiatan UKM
 - Melihat anggota UKM
 
-### =3. Admin
+### 3. Admin
 - Login sebagai admin
 - Mengelola semua UKM *(CRUD)*
 - Mengelola semua user dan perannya
