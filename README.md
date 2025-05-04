@@ -72,6 +72,7 @@
 | ukm_id    | int       | Foreign Key ke `ukm.id`                     |
 | status    | varchar   | 'menunggu', 'diterima', dll.                 |
 | created_at| timestamp |                                              |
+| updated_at  | timestamp |                                        |
 
 ### Tabel `kegiatan`
 
@@ -95,6 +96,7 @@
 | kegiatan_id     | int       | Foreign Key ke `kegiatan.id`                   |
 | status          | varchar   | 'terdaftar', 'hadir', 'tidak hadir'            |
 | created_at      | timestamp |                                                |
+| updated_at  | timestamp |                                        |
 
 ---
 
