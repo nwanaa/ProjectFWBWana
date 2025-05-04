@@ -2,9 +2,11 @@
 
 ---
 
+
 <p align="center">
   <img src="https://github.com/user-attachments/assets/6ea20b1c-762f-4fc2-98b8-fb3785782673" alt=" " width="180"/>
 </p>
+
 
 
 <p align="center">
@@ -20,7 +22,7 @@
 
 ### 1. Mahasiswa
 Peran sebagai pengguna yang ingin bergabung dalam kegiatan kampus melalui UKM
-| **Fitur**                    | **Deskripsi**                                                                 |
+| Fitur                    | Deskripsi                                                                 |
 |-----------------------------|------------------------------------------------------------------------------|
 | Mendaftar Akun              | Pengguna dapat membuat akun baru untuk mendapatkan akses awal ke dalam sistem. |
 | Login                       | Otentikasi pengguna untuk masuk ke dalam sistem dengan akun yang telah terdaftar. |
@@ -30,7 +32,8 @@ Peran sebagai pengguna yang ingin bergabung dalam kegiatan kampus melalui UKM
 
 
 ### 2. Pengurus UKM
-| **Fitur**                        | **Deskripsi**                                                                   |
+Peran sebagai pengelola UKM yang bertanggung jawab atas kegiatan dan anggota UKM
+| Fitur                        | Deskripsi                                                                   |
 |----------------------------------|---------------------------------------------------------------------------------|
 | Login                           | Pengurus dapat melakukan otentikasi untuk masuk ke sistem sebagai pengurus UKM. |
 | Mengelola Data UKM              | Pengurus dapat mengedit profil UKM, mengubah deskripsi, dan memperbarui informasi lainnya. |
@@ -39,7 +42,8 @@ Peran sebagai pengguna yang ingin bergabung dalam kegiatan kampus melalui UKM
 
 
 ### 3. Admin
-| **Fitur**                        | **Deskripsi**                                                                   |
+Peran sebagai penggelola sistem yang mengatur data pengguna, UKM, dan hak akses
+| Fitur                        | Deskripsi                                                                   |
 |----------------------------------|---------------------------------------------------------------------------------|
 | Login                           | Admin dapat melakukan otentikasi untuk masuk ke dalam sistem sebagai admin.     |
 | Mengelola Semua UKM             | Admin dapat melakukan CRUD (Create, Read, Update, Delete) terhadap data UKM tanpa batasan. |
