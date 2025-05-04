@@ -17,20 +17,20 @@
 
 ## Role dan Fitur-Fiturnya
 
-### => Mahasiswa
+### 1. Mahasiswa
 - Mendaftar akun *(register)*
 - Login *(otentikasi pengguna)*
 - Melihat daftar UKM
 - Mendaftar UKM
 - Melihat dan mendaftar kegiatan
 
-### => Pengurus UKM
+### 2. Pengurus UKM
 - Login sebagai pengurus
 - Mengelola data UKM (profil, deskripsi)
 - Membuat kegiatan UKM
 - Melihat anggota UKM
 
-### => Admin
+### =3. Admin
 - Login sebagai admin
 - Mengelola semua UKM *(CRUD)*
 - Mengelola semua user dan perannya
