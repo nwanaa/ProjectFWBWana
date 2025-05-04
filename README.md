@@ -1,5 +1,7 @@
 <h3 align="center">🎓 WEBSITE PENCATATAN DAN PENDAFTARAN UKM KAMPUS</h3>
+
 ---
+
 <p align="center">
   <img src="https://github.com/user-attachments/assets/6ea20b1c-762f-4fc2-98b8-fb3785782673" alt=" " width="200"/>
 </p>
@@ -10,6 +12,7 @@
   <strong>Framework Web Based</strong><br/><br/>
   <strong>2025</strong>
 </p>
+
 ---
 
 ## Role dan Fitur-Fiturnya
