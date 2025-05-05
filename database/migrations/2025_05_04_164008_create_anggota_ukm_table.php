@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('anggota_ukm', function (Blueprint $table) {
         $table->id();
-        $table->unsignedBigInteger('user_id');
-        $table->unsignedBigInteger('ukm_id');
+        $table->integer('user_id');
+        $table->integer('ukm_id');
         $table->string('status')->default('menunggu');
         $table->timestamps();
 

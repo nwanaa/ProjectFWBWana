@@ -13,8 +13,8 @@ return new class extends Migration
     {
          Schema::create('pendaftaran_kegiatan', function (Blueprint $table) {
         $table->id();
-        $table->unsignedBigInteger('user_id');
-        $table->unsignedBigInteger('kegiatan_id');
+        $table->integer('user_id');
+        $table->integer('kegiatan_id');
         $table->string('status')->default('terdaftar');
         $table->timestamps();
 
