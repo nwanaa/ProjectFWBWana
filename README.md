@@ -55,15 +55,28 @@ Peran sebagai penggelola sistem yang mengatur data pengguna, UKM, dan hak akses
 
 ### Tabel `users`
 
-| Field       | Tipe Data | Keterangan                            |
+| Field       | Tipe Data | Keterangan                             |
 |-------------|-----------|----------------------------------------|
 | id          | int       | Primary Key, auto increment            |
 | name        | varchar   | Nama lengkap pengguna                  |
 | email       | varchar   | Unik, digunakan untuk login            |
 | password    | varchar   | Password terenkripsi                   |
 | role        | varchar   | 'mahasiswa' / 'pengurus' / 'admin'     |
-| created_at      | TIMESTAMP | Waktu dibuat                                   |
-| updated_at      | TIMESTAMP | Waktu diubah                                   |
+| created_at  | TIMESTAMP | Waktu dibuat                           |
+| updated_at  | TIMESTAMP | Waktu diubah                           |
+
+### Tabel `profiles`
+
+| Field       | Tipe Data | Keterangan                |
+| ----------- | --------- | ------------------------- |
+| id          | int       | Primary Key               |
+| user\_id    | int       | Foreign Key ke `users.id` |
+| nim         | varchar   | Nomor Induk Mahasiswa     |
+| jurusan     | varchar   | Jurusan                   |
+| alamat      | text      | Alamat                    |
+| created\_at | timestamp | Waktu dibuat              |
+| updated\_at | timestamp | Waktu diubah              |
+
 
 ### Tabel `ukms`
 
@@ -73,19 +86,19 @@ Peran sebagai penggelola sistem yang mengatur data pengguna, UKM, dan hak akses
 | nama_ukm     | varchar   | Nama UKM                                   |
 | deskripsi    | text      | Penjelasan tentang UKM                     |
 | pengurus_id  | int       | Foreign Key ke `user.id` (pengurus)        |
-| created_at      | TIMESTAMP | Waktu dibuat                                   |
-| updated_at      | TIMESTAMP | Waktu diubah                                   |
+| created_at   | TIMESTAMP | Waktu dibuat                               |
+| updated_at   | TIMESTAMP | Waktu diubah                               |
 
 ### Tabel `anggota_ukm`
 
 | Field     | Tipe Data | Keterangan                                   |
 |-----------|-----------|----------------------------------------------|
 | id        | int       | Primary Key, auto increment                  |
-| user_id   | int       | Foreign Key ke `user.id`                    |
-| ukm_id    | int       | Foreign Key ke `ukm.id`                     |
+| user_id   | int       | Foreign Key ke `user.id`                     |
+| ukm_id    | int       | Foreign Key ke `ukm.id`                      |
 | status    | varchar   | 'menunggu', 'diterima', dll.                 |
-| created_at      | TIMESTAMP | Waktu dibuat                                   |
-| updated_at      | TIMESTAMP | Waktu diubah                                   |
+| created_at      | TIMESTAMP | Waktu dibuat                           |
+| updated_at      | TIMESTAMP | Waktu diubah                           |
 
 ### Tabel `kegiatans`
 
@@ -97,8 +110,8 @@ Peran sebagai penggelola sistem yang mengatur data pengguna, UKM, dan hak akses
 | deskripsi      | text      | Detail kegiatan                   |
 | tanggal        | date      | Tanggal pelaksanaan               |
 | lokasi         | varchar   | Lokasi kegiatan                   |
-| created_at      | TIMESTAMP | Waktu dibuat                                   |
-| updated_at      | TIMESTAMP | Waktu diubah                                   |
+| created_at     | TIMESTAMP | Waktu dibuat                      |
+| updated_at     | TIMESTAMP | Waktu diubah                      |
 
 ### Tabel `pendaftaran_kegiatan`
 
@@ -113,6 +126,9 @@ Peran sebagai penggelola sistem yang mengatur data pengguna, UKM, dan hak akses
 ---
 
 ## Jenis Relasi dan Tabel yang Berelasi
+
+- **`users → profiles`**  
+  *One-to-One*: Satu user bisa punya satu profile.
 
 - **`users → ukms`**  
   *One-to-Many*: Satu user (pengurus) bisa mengelola banyak UKM.
