@@ -11,16 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-         Schema::create('pendaftaran_kegiatan', function (Blueprint $table) {
-        $table->id();
-        $table->integer('user_id');
-        $table->integer('kegiatan_id');
-        $table->string('status')->default('terdaftar');
-        $table->timestamps();
-
-        $table->foreign('user_id')->references('id')->on('user')->onDelete('cascade');
-        $table->foreign('kegiatan_id')->references('id')->on('kegiatan')->onDelete('cascade');
-    });
+        Schema::create('pendaftaran_kegiatan', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('kegiatan_id');
+            $table->string('status');
+            $table->timestamps();
+        
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('kegiatan_id')->references('id')->on('kegiatans')->onDelete('cascade');
+        });
+        
     }
 
     /**
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('anggota_pendaftaran_kegiatan');
+        Schema::dropIfExists('pendaftaran_kegiatan');
     }
 };

@@ -12,15 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('anggota_ukm', function (Blueprint $table) {
-        $table->id();
-        $table->integer('user_id');
-        $table->integer('ukm_id');
-        $table->string('status')->default('menunggu');
-        $table->timestamps();
-
-        $table->foreign('user_id')->references('id')->on('user')->onDelete('cascade');
-        $table->foreign('ukm_id')->references('id')->on('ukm')->onDelete('cascade');
-    });
+            $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('ukm_id');
+            $table->string('status');
+            $table->timestamps();
+        
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('ukm_id')->references('id')->on('ukms')->onDelete('cascade');
+        });
+        
     }
 
     /**

@@ -9,15 +9,16 @@ return new class extends Migration
     //foreign key
     public function up(): void
     {
-         Schema::create('ukm', function (Blueprint $table) {
-        $table->id();
-        $table->string('nama_ukm');
-        $table->string('logo')->nullable();
-        $table->integer('pengurus_id'); 
-        $table->timestamps();
-
-        $table->foreign('pengurus_id')->references('id')->on('user')->onDelete('cascade'); 
-    });
+        Schema::create('ukms', function (Blueprint $table) {
+            $table->id();
+            $table->string('nama_ukm');
+            $table->text('deskripsi');
+            $table->unsignedBigInteger('pengurus_id'); // FK ke users
+            $table->timestamps();
+        
+            $table->foreign('pengurus_id')->references('id')->on('users')->onDelete('cascade');
+        });
+        
     }
 
     /**
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('ukm'); 
+        Schema::dropIfExists('ukms'); 
     }
 };

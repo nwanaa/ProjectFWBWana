@@ -11,17 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('kegiatan', function (Blueprint $table) {
-        $table->id();
-        $table->integer('ukm_id');
-        $table->string('nama_kegiatan');
-        $table->text('deskripsi')->nullable();
-        $table->date('tanggal');
-        $table->string('lokasi');
-        $table->timestamps();
-
-        $table->foreign('ukm_id')->references('id')->on('ukm')->onDelete('cascade');
-    });
+        Schema::create('kegiatans', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('ukm_id');
+            $table->string('nama_kegiatan');
+            $table->text('deskripsi');
+            $table->date('tanggal');
+            $table->string('lokasi');
+            $table->timestamps();
+        
+            $table->foreign('ukm_id')->references('id')->on('ukms')->onDelete('cascade');
+        });
+        
     }
 
     /**
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('anggota_kegiatan');
+        Schema::dropIfExists('kegiatans');
     }
 };
