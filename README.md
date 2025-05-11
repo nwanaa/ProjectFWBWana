@@ -53,7 +53,7 @@ Peran sebagai penggelola sistem yang mengatur data pengguna, UKM, dan hak akses
 
 ## Tabel-Tabel Database Beserta Field dan Tipe Datanya
 
-### Tabel `user`
+### Tabel `users`
 
 | Field       | Tipe Data | Keterangan                            |
 |-------------|-----------|----------------------------------------|
@@ -65,7 +65,7 @@ Peran sebagai penggelola sistem yang mengatur data pengguna, UKM, dan hak akses
 | created_at      | TIMESTAMP | Waktu dibuat                                   |
 | updated_at      | TIMESTAMP | Waktu diubah                                   |
 
-### Tabel `ukm`
+### Tabel `ukms`
 
 | Field        | Tipe Data | Keterangan                                 |
 |--------------|-----------|--------------------------------------------|
@@ -87,7 +87,7 @@ Peran sebagai penggelola sistem yang mengatur data pengguna, UKM, dan hak akses
 | created_at      | TIMESTAMP | Waktu dibuat                                   |
 | updated_at      | TIMESTAMP | Waktu diubah                                   |
 
-### Tabel `kegiatan`
+### Tabel `kegiatans`
 
 | Field          | Tipe Data | Keterangan                        |
 |----------------|-----------|-----------------------------------|
@@ -114,16 +114,16 @@ Peran sebagai penggelola sistem yang mengatur data pengguna, UKM, dan hak akses
 
 ## Jenis Relasi dan Tabel yang Berelasi
 
-- **`user → ukm`**  
+- **`users → ukms`**  
   *One-to-Many*: Satu user (pengurus) bisa mengelola banyak UKM.
 
-- **`user → anggota_ukm ← ukm`**  
+- **`users → anggota_ukm ← ukms`**  
   *Many-to-Many*: Mahasiswa bisa gabung lebih dari satu UKM, satu UKM punya banyak anggota.
 
 - **`ukm → kegiatan`**  
   *One-to-Many*: Satu UKM bisa punya banyak kegiatan.
 
-- **`user → pendaftaran_kegiatan ← kegiatan`**  
+- **`users → pendaftaran_kegiatan ← kegiatans`**  
   *Many-to-Many*: Mahasiswa bisa mendaftar banyak kegiatan, dan satu kegiatan bisa diikuti banyak mahasiswa.
 
 
