@@ -18,5 +18,18 @@ class UKMSeeder extends Seeder
         'deskripsi' => 'Unit Kegiatan Mahasiswa Musik Kampus',
         'pengurus_id' => 2 // id user pengurus
     ]);
+
+       
+    UKM::create([
+        'nama_ukm' => 'UKM Tari',
+        'deskripsi' => 'Unit Kegiatan Mahasiswa Tari Kampus',
+        'pengurus_id' => 3 // Pengurus 2
+    ]);
+    
+    UKM::create([
+        'nama_ukm' => 'UKM Riset',
+        'deskripsi' => 'Unit Kegiatan Mahasiswa Penelitian dan Riset',
+        'pengurus_id' => 4 // Pengurus 3
+    ]);
 }
 }

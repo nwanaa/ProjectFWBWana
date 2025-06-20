@@ -14,16 +14,37 @@ class AuthController extends Controller
         return view('auth.login');
     }
 
+    // public function login(Request $request)
+    // {
+    //     $credentials = $request->only('email', 'password');
+
+    //     if (Auth::attempt($credentials)) {
+    //         return redirect()->route('dashboard');
+    //     }
+
+    //     return back()->with('error', 'Email atau password salah.');
+    // }
+
     public function login(Request $request)
     {
         $credentials = $request->only('email', 'password');
-
+    
         if (Auth::attempt($credentials)) {
-            return redirect()->route('dashboard');
+            $user = Auth::user();
+    
+            // Redirect sesuai role
+            if ($user->role === 'admin') {
+                return redirect()->route('dashboard.admin');
+            } elseif ($user->role === 'pengurus') {
+                return redirect()->route('dashboard.pengurus');
+            } else {
+                return redirect()->route('dashboard.mahasiswa');
+            }
         }
-
+    
         return back()->with('error', 'Email atau password salah.');
     }
+    
 
     public function showRegisterForm()
     {

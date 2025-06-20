@@ -17,15 +17,31 @@ class UserSeeder extends Seeder
         User::create([
             'name' => 'Admin Kampus',
             'email' => 'admin@kampus.com',
-            'password' => Hash::make('password'),
+            'password' => Hash::make('admin'),
             'role' => 'admin'
         ]);
 
-        // Pengurus
+        // Pengurus 1
         User::create([
-            'name' => 'Pengurus Musik',
-            'email' => 'pengurus@ukm.com',
-            'password' => Hash::make('password'),
+            'name' => 'Pengurus UKM Musik',
+            'email' => 'pengurus1@ukm.com',
+            'password' => Hash::make('pengurus1'),
+            'role' => 'pengurus'
+        ]);
+        
+        // Pengurus 2
+        User::create([
+            'name' => 'Pengurus UKM Tari',
+            'email' => 'pengurus2@ukm.com',
+            'password' => Hash::make('pengurus2'),
+            'role' => 'pengurus'
+        ]);
+        
+        // Pengurus 3
+        User::create([
+            'name' => 'Pengurus UKM Riset',
+            'email' => 'pengurus3@ukm.com',
+            'password' => Hash::make('pengurus3'),
             'role' => 'pengurus'
         ]);
 
@@ -33,7 +49,7 @@ class UserSeeder extends Seeder
         User::create([
             'name' => 'Wana Mahasiswa',
             'email' => 'wana@mahasiswa.com',
-            'password' => Hash::make('password'),
+            'password' => Hash::make('mahasiswa'),
             'role' => 'mahasiswa'
         ]);
     }
